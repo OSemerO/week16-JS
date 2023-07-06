@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>JS 2.0. Практикум.</title>
+		<link rel="stylesheet" href="./assets/style.css" />
+		<link rel="stylesheet" href="assets/skeleton.css" />
+		<link rel="stylesheet" href="assets/normalize.css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h2><a>Практикум</a></h2>
+			<h1>Неделя 16. Формы</h1>
+
+			<section class="formsAll">
+				<div class="form">
+					<h2>Форма 1</h2>
+					<form name="formOne" class="firstForm">
+						<label for="firstName" class="form__label">Имя:</label>
+						<input type="text" id="firstName" name="firstName" class="form__input" />
+						<br />
+
+						<label for="firstEmail" class="form__label">Email:</label>
+						<input type="email" id="firstEmail" name="firstEmail" class="form__input" />
+						<br />
+
+						<label for="firstSelect" class="form__label">Выберите опцию:</label>
+						<select id="firstSelect" name="firstSelect" class="form__select">
+							<option value="Опция 1">Опция 1</option>
+							<option value="Опция 2">Опция 2</option>
+							<option value="Опция 3">Опция 3</option>
+						</select>
+						<br />
+
+						<button type="submit" name="firstButton" class="form__submit">Отправить</button>
+						<p class="error-message" id="errorMessage"></p>
+					</form>
+				</div>
+
+				<div class="form">
+					<h2>Форма 2</h2>
+					<form name="formTwo" class="secondForm">
+						<label for="secondName" class="form__label">Имя:</label>
+						<input type="text" id="secondName" name="secondName" class="form__input" />
+						<br />
+
+						<label for="secondEmail" class="form__label">Email:</label>
+						<input type="email" id="secondEmail" name="secondEmail" class="form__input" />
+						<br />
+
+						<label class="form__label">Выберите варианты:</label>
+
+						<div class="flex">
+							<input type="checkbox" id="checkbox1" name="checkboxOne" class="form__checkbox" />
+							<label for="checkbox1">Вариант 1</label>
+						</div>
+
+						<div class="flex">
+							<input type="checkbox" id="checkbox2" name="checkboxTwo" class="form__checkbox" />
+							<label for="checkbox2">Вариант 2</label>
+						</div>
+
+						<div class="flex">
+							<input type="checkbox" id="checkbox3" name="checkboxThree" class="form__checkbox" />
+							<label for="checkbox3">Вариант 3</label>
+						</div>
+
+						<input name="secondButton" type="submit" value="Отправить" class="form__submit" />
+					</form>
+				</div>
+
+				<div class="form">
+					<h2>Форма 3</h2>
+					<form name="formThree" class="thirdForm">
+						<label for="thirdName" class="form__label">Имя:</label>
+						<input
+							type="text"
+							id="thirdName"
+							name="thirdName"
+							class="form__input"
+							placeholder="Ваше имя" />
+						<br />
+
+						<label for="thirdEmail" class="form__label">Email:</label>
+						<input type="email" id="thirdEmail" name="thirdEmail" class="form__input" />
+						<br />
+
+						<input type="submit" name="thirdButton" value="Отправить" class="form__submit" />
+					</form>
+				</div>
+
+				<div class="form">
+					<h2>Форма 4</h2>
+					<form name="lastForm" class="fourthForm">
+						<label class="form__label">Зарегистрируемся?</label>
+						<input
+							type="radio"
+							name="fourthName"
+							value="Я хочу зарегистрироваться"
+							class="form__input" />
+						<span>Я хочу зарегистрироваться</span>
+						<br />
+
+						<input type="submit" name="fourthButton" value="Отправить" class="form__submit b-13" />
+						<p id="practicum13"></p>
+					</form>
+				</div>
+			</section>
+
+			<section>
+				<h4>Задание 1</h4>
+				<p>
+					Найдите все формы на странице. При нажатии на кнопку выведите количество найденных форм.
+				</p>
+				<p class="hint">
+					Подсказка: используйте коллекцию
+					<code>document.forms</code>
+					и свойство
+					<code>length</code>
+				</p>
+				<button class="button-primary b-1">Задание 1</button>
+				<p id="practicum"></p>
+			</section>
+
+			<section>
+				<h4>Задание 2</h4>
+				<p>
+					Найдите первую форму на странице. При нажатии на кнопку выведите значение атрибута
+					<code>name</code>
+					этой формы.
+				</p>
+				<p class="hint">
+					Подсказка: для получения формы используйте коллекцию
+					<code>document.forms</code>
+					и метод
+					<code>getAttribute</code>
+				</p>
+				<button class="button-primary b-2">Задание 2</button>
+				<div class="pr"><span id="practicum2"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 3</h4>
+				<p>
+					Найдите последнюю форму на странице. При нажатии на кнопку выведите значение атрибута
+					<code>name</code>
+					этой формы.
+				</p>
+				<p class="hint">
+					Подсказка: для получения формы используйте коллекцию
+					<code>document.forms</code>
+					и метод
+					<code>getAttribute</code>
+				</p>
+				<button class="button-primary b-3">Задание 3</button>
+				<div class="pr"><span id="practicum3"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 4</h4>
+				<p>
+					Найдите все формы на странице и выведите их названия. При нажатии на кнопку выведите
+					названия всех найденных форм, разделённых запятыми.
+				</p>
+				<p class="hint">
+					Для решения задания вы можете использовать следующую логику:
+					<br />
+					- Получите все формы на странице, используя коллекцию
+					<code>document.forms</code>
+					<br />
+					- Создайте пустой массив
+					<code>formNames</code>
+					для хранения названий форм
+					<br />
+					- Пройдитесь по каждой форме в коллекции и для каждой формы:
+					<br />
+					&emsp;- Получите значение атрибута
+					<code>name</code>
+					с помощью метода
+					<code>getAttribute</code>
+					<br />
+					&emsp;- Добавьте полученное название в массив
+					<code>formNames</code>
+					<br />
+					- Преобразуйте массив
+					<code>formNames</code>
+					в строку, разделив названия запятыми, с помощью метода
+					<code>join()</code>
+					<br />
+				</p>
+				<button class="button-primary b-4">Задание 4</button>
+				<div class="pr"><span id="practicum4"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 5</h4>
+				<p>
+					Найдите третью форму на странице, используя
+					<code>document.forms</code>
+					и имя формы (которое вы знаете из задания 4). Выведите на страницу количество элементов в
+					форме, используя коллекцию
+					<code>form.elements</code>
+				</p>
+				<p class="hint">
+					Подсказка: используйте коллекцию
+					<code>document.forms</code>
+					для получения формы по индексу и свойство
+					<code>form.elements.length</code>
+					для получения количества элементов в форме
+				</p>
+				<button class="button-primary b-5">Задание 5</button>
+				<div class="pr"><span id="practicum5"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 6</h4>
+				<p>
+					Найдите вторую форму на странице, используя
+					<code>document.forms</code>
+					и имя формы (которое вы знаете из задания 4). Выведите на страницу количество элементов в
+					форме, используя коллекцию
+					<code>form.elements</code>
+				</p>
+				<button class="button-primary b-6">Задание 6</button>
+				<div class="pr"><span id="practicum6"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 7</h4>
+				<p>
+					Выведите перечисление названий (name) всех элементов второй формы на экран. В задании 6 вы
+					нашли их количество.
+				</p>
+				<p class="hint">
+					Подсказка: Для решения задания вам понадобится использовать цикл
+					<code>for</code>
+					и коллекцию
+					<code>form.elements</code>
+					для перебора элементов формы и их вывода на экран
+					<br />
+					- Создайте пустую строку
+					<code>elementsList</code>
+					, которая будет хранить перечисление названий элементов
+					<br />
+					- Используйте цикл
+					<code>for</code>
+					для перебора элементов формы в коллекции
+					<code>formElements</code>
+
+					<br />
+					- Внутри цикла добавьте текущее название элемента формы (свойство
+					<code>name</code>
+					) в
+					<code>elementsList</code>
+					, добавляя дефис перед названием
+					<br />
+					- После цикла выведите текст с перечислением элементов в элемент с
+					<code>id="practicum7"</code>
+					, используя свойство
+					<code>textContent</code>
+				</p>
+				<button class="button-primary b-7">Задание 7</button>
+				<div class="pr"><span id="practicum7"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 8</h4>
+				<p>Выведите перечисление названий (name) всех элементов первой формы на экран.</p>
+				<button class="button-primary b-8">Задание 8</button>
+				<div class="pr"><span id="practicum8"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 9</h4>
+				<p>
+					Найдите третью форму на странице. Выведите перечисление названий (name) всех элементов
+					формы на экран.
+				</p>
+				<button class="button-primary b-9">Задание 9</button>
+				<div class="pr"><span id="practicum9"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 10</h4>
+				<p>Выведите на экран значение radio кнопки четвёртой формы на странице</p>
+				<p class="hint">
+					Подсказка: используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство
+					<code>elements</code>
+					для доступа к элементам формы и свойство
+					<code>value</code>
+					для получения значения radio кнопки
+				</p>
+				<button class="button-primary b-10">Задание 10</button>
+				<div class="pr"><span id="practicum10"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 11</h4>
+				<p>Выведите значения всех опций из первой формы</p>
+				<p class="hint">
+					Подсказка: Используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство
+					<code>elements</code>
+					для доступа к элементам формы и свойство
+					<code>value</code>
+					для получения значения выбранной опции
+					<br />
+					- Получите доступ к форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную
+					<br />
+					- Получите доступ к элементу select с помощью
+					<code>form.elements</code>
+					и сохраните его в переменную
+					<br />
+					- Создайте пустую строку
+					<code>optionsValues</code>
+					, которая будет хранить значения всех опций
+					<br />
+					- Используйте цикл или метод
+					<code>forEach</code>
+					для перебора опций в коллекции элемента select
+					<br />
+					- Внутри цикла получите значение каждой опции с помощью свойства
+					<code>value</code>
+					и добавьте его в
+					<code>optionsValues</code>
+					<br />
+					- Выведите значения опций на страницу
+				</p>
+				<button class="button-primary b-11">Задание 11</button>
+				<div class="pr"><span id="practicum11"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 12</h4>
+				<p>Выведите значения атрибутов id всех чекбоксов (количество: 3) из второй формы</p>
+				<p class="hint">
+					Подсказка: Используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство
+					<code>elements</code>
+					для доступа к элементам формы и свойство
+					<code>id</code>
+					для получения значений
+					<br />
+				</p>
+				<button class="button-primary b-12">Задание 12</button>
+				<div class="pr"><span id="practicum12"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 13</h4>
+				<p>Проверьте была ли выбрана кнопка четвёртой формы</p>
+				<p class="hint">
+					Подсказка: Используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство
+					<code>elements</code>
+					для доступа к элементам формы и свойство
+					<code>checked</code>
+					для проверки выбранности кнопки
+					<br />
+					- Получите доступ к форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную
+					<br />
+					- Получите доступ к radio кнопке с помощью
+					<code>form.elements</code>
+					и сохраните её в переменную
+					<br />
+					- Используйте условный оператор (
+					<code>if</code>
+					) для проверки выбранности кнопки
+					<br />
+					- Если кнопка выбрана, выведите сообщение "Кнопка выбрана" на страницу
+					<br />
+					- Если кнопка не выбрана, выведите сообщение "Кнопка не выбрана" на страницу
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 14</h4>
+				<p>Проверьте, какой вариант выбран в первой форме</p>
+				<p class="hint">
+					Подсказка: Используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство
+					<code>elements</code>
+					для доступа к элементам формы и свойство
+					<code>value</code>
+					выбранной опции для получения выбранного варианта
+					<br />
+					- Получите доступ к форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную
+					<br />
+					- Получите доступ к элементу select с помощью
+					<code>form.elements</code>
+					и сохраните его в переменную
+					<br />
+					- Установите выбранным второй вариант:
+					<code>select.selectedIndex = 1;</code>
+					<br />
+					- Используйте свойство
+					<code>value</code>
+					выбранной опции для получения выбранного варианта
+					<br />
+					- Используйте условный оператор (
+					<code>if</code>
+					) для проверки выбранного варианта
+					<br />
+					- Если выбран первый вариант, выведите сообщение "Выбран первый вариант" на страницу
+					<br />
+					- Если выбран второй вариант, выведите сообщение "Выбран второй вариант" на страницу
+					<br />
+					- Если выбран третий вариант, выведите сообщение "Выбран третий вариант" на страницу
+				</p>
+				<button class="button-primary b-14">Задание 14</button>
+				<div class="pr"><span id="practicum14"></span></div>
+			</section>
+
+			<section>
+				<h4>Задание 15</h4>
+				<p>Добавьте в первую форму выбранную Опцию 1 по умолчанию</p>
+				<p class="hint">
+					Подсказка: Используйте коллекцию
+					<code>document.forms</code>
+					для доступа к формам, свойство elements для доступа к элементам формы и свойство
+					<code>selectedIndex</code>
+					элемента select, чтобы установить выбранный индекс опции по умолчанию.
+					<br />
+					- Получите доступ к форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную
+					<br />
+					- Получите доступ к элементу select с помощью
+					<code>form.elements</code>
+					и сохраните его в переменную
+					<br />
+					- Используйте свойство
+					<code>selectedIndex</code>
+					элемента select, чтобы установить выбранный индекс опции по умолчанию
+					<br />
+					- Установите значение
+					<code>selectedIndex</code>
+					равным индексу опции, которую вы хотите выбрать по умолчанию
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 16</h4>
+				<p>Во второй форме установите выбранный вариант "Вариант 3" по умолчанию.</p>
+				<p class="hint">
+					Подсказка: Используйте свойство
+					<code>checked</code>
+					для элемента checkbox, чтобы установить его выбранным по умолчанию.
+					<br />
+					- Получите доступ к форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную.
+					<br />
+					- Получите доступ к элементу checkbox с помощью
+					<code>form.elements</code>
+					и сохраните его в переменную.
+					<br />
+					- Используйте свойство
+					<code>checked</code>
+					элемента checkbox, чтобы установить его выбранным по умолчанию.
+					<br />
+					- Установите значение
+					<code>true</code>
+					для выбранного варианта.
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 17</h4>
+				<p>Проверьте, заполнены ли все поля первой формы перед отправкой</p>
+				<p class="hint">
+					Подсказка:
+					<br />
+					- Получите доступ к каждому полю формы с помощью
+					<code>form.elements</code>
+					и сохраните их в соответствующие переменные
+					<br />
+					- Используйте условные операторы (
+					<code>if</code>
+					) для проверки каждого поля на заполненность
+					<br />
+					- Если хотя бы одно поле не заполнено, выведите сообщение об ошибке на страницу (элемент
+					куда необходимо добавить ошибку создан:
+					<code>&lt;p&gt; class="error-message" id="errorMessage">&lt;/p&gt;</code>
+					)
+					<br />
+					- Добавьте слушатель события
+					<code>submit</code>
+					к форме, чтобы выполнить проверку перед отправкой
+					<br />
+					- В обработчике события вызовите метод
+					<code>event.preventDefault()</code>
+					для отмены отправки формы в случае ошибки
+				</p>
+				<p>
+					Для проверки работы вашего кода, заполните частично первую формк и нажмит ена кнопку
+					отправить
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 18</h4>
+				<p>Очистите все поля первой формы после отправки</p>
+				<p class="hint">
+					Подсказка: используйте метод
+					<code>reset()</code>
+					формы, чтобы очистить все её поля после отправки. Добавьте слушатель события
+					addEventListener на первую форму, как вы делали в задании 17. Используйте метод
+					<code>event.preventDefault()</code>
+					.
+				</p>
+				<button class="button-primary b-18">Задание 18</button>
+			</section>
+
+			<section>
+				<h4>Задание 19</h4>
+				<p>
+					При выборе определенной опции из выпадающего списка первой формы измените цвет фона
+					страницы (Опция 1 - красный цвет; Опция 2 - зелёный цвет; Опция 3 - синий цвет)
+				</p>
+				<p class="hint">
+					Подсказка:
+					<br />
+					- Получите доступ к элементу
+					<code>select</code>
+					с помощью
+					<code>document.getElementById</code>
+					или другим методом выборки элементов и сохраните его в переменную
+					<br />
+					- Используйте событие
+					<code>onchange</code>
+					для отслеживания изменений в выборе опции
+					<br />
+					- В обработчике события, используя условные операторы (
+					<code>if</code>
+					), проверьте выбранную опцию
+					<br />
+					- В зависимости от выбранной опции, измените цвет фона страницы, используя свойство
+					<code>document.body.style.backgroundColor</code>
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 20</h4>
+				<p>Добавьте валидацию для поля Email первой формы</p>
+				<p class="hint">
+					Подсказка:
+					<br />
+					- Получите доступ к первой форме с помощью
+					<code>document.forms</code>
+					и сохраните её в переменную
+					<br />
+					- Получите доступ к полю Email с помощью
+					<code>form.elements</code>
+					и сохраните его в переменную
+					<br />
+					- Используйте событие
+					<code>oninput</code>
+					для отслеживания изменений в поле Email
+					<br />
+					- В обработчике события, используя регулярное выражение (
+					<code>RegExp: /^[^\s@]+@[^\s@]+.[^\s@]+$/</code>
+					), проверьте введённое значение поля Email
+					<br />
+					- В зависимости от результата проверки, измените стиль поля Email (например, установите
+					класс с ошибкой) и отобразите сообщение об ошибке в элементе &lt;p&gt;(необходимо добавить
+					сомастоятельно) с помощью свойства textContent.
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 21</h4>
+				<p>
+					При отправке второй формы выполняется проверка всех чекбоксов. Если ни один из чекбоксов
+					не выбран, отмените отправку формы и выведите сообщение об ошибке в элементе с id
+					"result21".
+				</p>
+				<button class="button-primary b-21">Задание 21</button>
+				<p class="pr" id="result21"></p>
+			</section>
+
+			<section>
+				<h4>Задание 22</h4>
+				<p>
+					При отправке третьей формы выполняется проверка поля Имя на заполненность. Если поле Имя
+					пустое, отмените отправку формы и выведите сообщение об ошибке в элементе с id "result22".
+				</p>
+				<button class="button-primary b-22">Задание 22</button>
+				<p class="pr" id="result22"></p>
+			</section>
+
+			<section>
+				<h4>Задание 23</h4>
+				<p>
+					При выборе опции "Я хочу зарегистрироваться" в четвёртой форме кнопка должна быть
+					разблокирована. В противном случае, сделайте кнопку отправки формы заблокированной.
+				</p>
+				<p class="hint">
+					Подсказка: используйте свойство
+					<code>disabled</code>
+				</p>
+				<button class="button-primary b-23">Задание 23</button>
+				<p class="pr" id="result23"></p>
+			</section>
+
+			<section>
+				<h4>Задание 24</h4>
+				<p>
+					Найдите все поля ввода на странице и установите им атрибут "placeholder" со значением
+					"Введите данные"
+				</p>
+				<p class="hint">Подсказка: используйте методы forEach и setAttribute</p>
+				<button class="button-primary b-24">Задание 24</button>
+			</section>
+
+			<section>
+				<h4>Задание 25</h4>
+				<p>
+					При фокусе на любом поле ввода измените его границу на цвет "#00ff00". При потере фокуса
+					восстановите стандартную границу.
+				</p>
+				<button class="button-primary b-25">Задание 25</button>
+			</section>
+
+			<section>
+				<h4>Задание 26</h4>
+				<p>
+					При нажатии на кнопку "Задание 26" отобразите в элементе с id "result26" значение
+					placeholder из поля имя в третьей форме
+				</p>
+				<button class="button-primary b-26">Задание 26</button>
+				<p class="pr" id="result26"></p>
+			</section>
+
+			<section>
+				<h4>Задание 27</h4>
+				<p>
+					При изменении значения любого из полей второй формы отобразите сообщение с текстом
+					"Изменение внесено" в элементе с id "result27"
+				</p>
+				<p class="pr" id="result27"></p>
+			</section>
+
+			<section>
+				<h4>Задание 28</h4>
+				<p>
+					При выборе любой из опций выпадающего списка в первой форме отобразите сообщение с текстом
+					"Опция выбрана" в элементе с id "result28"
+				</p>
+				<p class="pr" id="result28"></p>
+			</section>
+
+			<section>
+				<h4>Задание 29</h4>
+				<p>
+					При заполнении всех полей третьей формы выведите их значения в консоль. Используйте
+					JavaScript без использования объекта FormData.
+				</p>
+			</section>
+
+			<section>
+				<h4>Задание 30</h4>
+				<p>При отправке второй формы выведите значения выбранных вариантов в консоль</p>
+				<p class="pr" id="result30"></p>
+			</section>
+		</div>
+
+		<script src="./week16.js"></script>
+	</body>
+</html>
