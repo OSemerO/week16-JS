@@ -49,12 +49,16 @@
 			<input type=“password” name=“password” id=“password”><br>
 </div>
 
-	<div>
-		<label for="confirm-password">Подтвердите пароль:</label><br>
-		<input type="password" name="confirm-password" id="confirm-password"><br>
-	</div>
+<form novalidate>
+	<label for="password">Пароль:</label>
+	<input type="password" id="password" name="password" placeholder="Не менее 8 символов" required minlength="8" pattern="[a-zA-Z0-9]{8,}">
+	<div class="error" id="error-password"></div>
+	
+	<label for="checkbox">Я согласен с обработкой моих данных:</label>
+	<input type="checkbox" id="checkbox" name="checkbox" required>
 	
 	<button type="submit">Зарегистрироваться</button>
+  </form>
 </form>
 
 	</body>
