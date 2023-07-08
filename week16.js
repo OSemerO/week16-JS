@@ -4,6 +4,15 @@
 
 const paragraph = document.getElementById('practicum');
 
+// Получаем HTML-код страницы
+const html = document.documentElement.outerHTML;
+
+// Ищем все формы на странице и сохраняем их в коллекции
+const forms = [...document.forms];
+
+// Выводим количество найденных форм
+console.log(forms.length);
+
 function makeOne() {
 	//Ваш код
 }
@@ -16,11 +25,17 @@ document.querySelector('.b-1').onclick = makeOne;
 
 const paragraphTwo = document.getElementById('practicum2');
 
-function makeTwo() {
-	//Ваш код
-}
+const form = document.querySelector('form'); // Получаем первую форму на странице
 
-document.querySelector('.b-2').onclick = makeTwo;
+document.querySelector('.button').addEventListener('click', () => {
+  console.log(`Значение атрибута name первой формы: ${form.getAttribute('name')}`);
+});
+
+// function makeTwo() {
+// 	//Ваш код
+// }
+
+// document.querySelector('.b-2').onclick = makeTwo;
 
 //Задание 3
 //Найдите последнюю форму на странице. При нажатии на кнопку выведите значение атрибута "name" этой формы.
