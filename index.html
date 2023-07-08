@@ -24,7 +24,7 @@
 			<input type="email" name="email" id="email" placeholder="you@example.com" required><br>
 		</div>
 		
-</div>
+		</div>
 
 <form novalidate>
 	<label for="password">Пароль:</label>
@@ -35,8 +35,22 @@
 	<input type="checkbox" id="checkbox" name="checkbox" required>
 	
 	<button type="submit">Зарегистрироваться</button>
-  </form>
 </form>
+</form>
+
+<div class="form-group">
+	<label for="age" class="form-label age">Возраст:</label>
+	<input
+		type="number"
+		id="age"
+		name="age"
+		class="form-input"
+		placeholder="Введите ваш возраст"
+		required />
+	 <span class="error-message" id="age-error"></span>
+</div>
+
+
 
 	</body>
 </html>
