@@ -346,9 +346,11 @@ document.querySelector('.b-22').onclick = function (event) {
 //Найдите все поля ввода на странице и установите им атрибут "placeholder" со значением "Введите данные"
 //Подсказка: для установки атрибута используйте методы forEach и setAttribute
 
-document.querySelector('.b-24').onclick = function () {
-	//Ваш код
-};
+
+let inputElements = document.getElementsByTagName('input'); // получаем коллекцию элементов input
+inputElements.forEach((inputElement) => { // проходим по коллекции элементов
+    inputElement.setAttribute('placeholder', 'Введите данные'); // устанавливаем значение атрибута placeholder
+});
 
 //Задание 25
 //При фокусе на любом поле ввода измените его границу на цвет "#00ff00". При потере фокуса восстановите стандартную границу.
