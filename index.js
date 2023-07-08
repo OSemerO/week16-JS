@@ -50,4 +50,4 @@ clearErrors();
 // Чтобы вывести значения полей формы в консоль и очистить форму, можно использовать следующий код после успешной проверки валидности:
 
 console.log(document.forms[0].elements);
-document.forms.myForm.reset();
+document.forms.myForm.reset()}
