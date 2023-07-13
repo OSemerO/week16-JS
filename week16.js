@@ -2,8 +2,6 @@
 //Найдите все формы на странице. При нажатии на кнопку выведите количество найденных форм.
 //Подсказка: используйте коллекцию document.forms и свойство length
 
-const paragraph = document.getElementById('practicum');
-
 // Получаем HTML-код страницы
 const html = document.documentElement.outerHTML;
 
@@ -13,41 +11,28 @@ const forms = [...document.forms];
 // Выводим количество найденных форм
 console.log(forms.length);
 
-function makeOne() {
-	//Ваш код
-}
-
-document.querySelector('.b-1').onclick = makeOne;
-
 //Задание 2
 //Найдите первую форму на странице. При нажатии на кнопку выведите значение атрибута "name" этой формы.
 //Подсказка: используйте коллекцию document.forms и метод getAttribute
 
-const paragraphTwo = document.getElementById('practicum2');
+// Получаем все формы на странице
+let formAll = document.getElementsByTagName('form');
 
-const form = document.querySelector('form'); // Получаем первую форму на странице
-
-document.querySelector('.button').addEventListener('click', () => {
-  console.log(`Значение атрибута name первой формы: ${form.getAttribute('name')}`);
+// Обрабатываем нажатие на кнопку
+document.querySelector('.b-2').addEventListener('click', function() {
+  const selectedForm = forms[0]; // находим форму
+  console.log(selectedForm.getAttribute('name')); // Выводим значение атрибута name
 });
-
-// function makeTwo() {
-// 	//Ваш код
-// }
-
-// document.querySelector('.b-2').onclick = makeTwo;
 
 //Задание 3
 //Найдите последнюю форму на странице. При нажатии на кнопку выведите значение атрибута "name" этой формы.
 //Подсказка: используйте коллекцию document.forms и метод getAttribute
+// все формы мы получили в задании 2, второй рах находить не нужно
 
-const paragraphThree = document.getElementById('practicum3');
-
-function makeThree() {
-	//Ваш код
-}
-
-document.querySelector('.b-3').onclick = makeThree;
+document.querySelector('.b-3').addEventListener('click', function() {
+	let selectedForm = forms[3]; // находим форму
+	console.log(selectedForm.getAttribute('name')); // Выводим значение атрибута name
+  });
 
 //Задание 4
 //Найдите все формы на странице и выведите их названия
@@ -61,13 +46,24 @@ document.querySelector('.b-3').onclick = makeThree;
 //- Преобразуйте массив formNames в строку, разделив названия запятыми, с помощью метода join()
 //- Выведите полученную строку названий форм в элемент с id practicum4 при нажатии на кнопку
 
-const paragraphFour = document.getElementById('practicum4');
+const formNames = [];
 
-function makeFour() {
-	//Ваш код
-}
+const btn = document.querySelector('.b-4');
+btn.addEventListener('click', () => {
+    const formElements = document.forms;
+    
+    for(let i = 0; i < formElements.length; i++){
+        const form = formElements[i];
+        formNames.push(form.name);
+    }
+    console.log('Названия форм: ', formNames.join(', '));
+});
 
-document.querySelector('.b-4').onclick = makeFour;
+// const results = document.querySelector('.practicum4');
+// results.innerHTML = formNames.toString(); 
+// const formNamesString = formNames.join(","); 
+// results.innerText = formNamesString;  не понимаю где ошибка, он все равно выводит названия в консоль, а не на страницу.
+
 
 //Задание 5
 //Найдите третью форму на странице, используя document.forms и имя формы (которое вы знаете из задания 4)
@@ -75,6 +71,7 @@ document.querySelector('.b-4').onclick = makeFour;
 //Подсказка: используйте коллекцию document.forms для получения формы по индексу и свойство form.elements.length для получения количества элементов в форме
 
 const paragraphFive = document.getElementById('practicum5');
+
 
 function makeFive() {
 	//Ваш код
