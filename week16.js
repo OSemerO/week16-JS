@@ -70,14 +70,18 @@ btn.addEventListener('click', () => {
 //Выведите на страницу количество элементов в форме, используя коллекцию form.elements
 //Подсказка: используйте коллекцию document.forms для получения формы по индексу и свойство form.elements.length для получения количества элементов в форме
 
-const paragraphFive = document.getElementById('practicum5');
 
+// let form3 = document.forms.formThree;
+// 	console.log(form3);
+// 	let elem = form3.elements
+// 	console.log(elem);
 
-function makeFive() {
-	//Ваш код
-}
-
-document.querySelector('.b-5').onclick = makeFive;
+document.querySelector('.b-5').addEventListener('click', function() {
+	let form3 = document.forms.formThree;
+	console.log(form3);
+	let elem = form3.elements
+	console.log(elem);
+  });
 
 //Задание 6
 //Найдите вторую форму на странице, используя document.forms и имя формы (которое вы знаете из задания 4)
