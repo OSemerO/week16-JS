@@ -109,7 +109,7 @@ function printElementNames() {
 	for (const element of formTwo.elements) {
 		elementNames.push(element.name);
 	}
-	elementNames = elementNames.join('-');
+	elementNames = elementNames.join(' -- ');
 	  
 	document.getElementById('practicum7').textContent = elementNames;
 	};
@@ -120,13 +120,20 @@ function printElementNames() {
 //Задание 8
 //Выведите перечисление названий (name) всех элементов первой формы на экран. В задании 5 вы нашли их количество.
 
-const paragraphEight = document.getElementById('practicum8');
+function elementNames1() {
+	let formOne = document.forms.formOne;
+	
+	let elementNames = [];
+	
+	for (const element of formOne.elements) {
+		elementNames.push(element.name);
+	}
+	elementNames = elementNames.join(' -- ');
+	  
+	document.getElementById('practicum8').textContent = elementNames;
+	};
 
-function makeEight() {
-	//Ваш код
-}
-
-document.querySelector('.b-8').onclick = makeEight;
+	document.querySelector('.b-8').onclick = elementNames1;
 
 //Задание 9
 //Найдите третью форму на странице. Выведите перечисление названий (name) всех элементов формы на экран.
