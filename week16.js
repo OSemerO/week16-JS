@@ -2,23 +2,16 @@
 //Найдите все формы на странице. При нажатии на кнопку выведите количество найденных форм.
 //Подсказка: используйте коллекцию document.forms и свойство length
 
-// Получаем HTML-код страницы
 const html = document.documentElement.outerHTML;
-
-// Ищем все формы на странице и сохраняем их в коллекции
 const forms = [...document.forms];
-
-// Выводим количество найденных форм
 console.log(forms.length);
 
 //Задание 2
 //Найдите первую форму на странице. При нажатии на кнопку выведите значение атрибута "name" этой формы.
 //Подсказка: используйте коллекцию document.forms и метод getAttribute
 
-// Получаем все формы на странице
 let formAll = document.getElementsByTagName('form');
 
-// Обрабатываем нажатие на кнопку
 document.querySelector('.b-2').addEventListener('click', function() {
   const selectedForm = forms[0]; // находим форму
   console.log(selectedForm.getAttribute('name')); // Выводим значение атрибута name
@@ -121,9 +114,7 @@ function printElementNames() {
 
 function elementNames1() {
 	let formOne = document.forms.formOne;
-	
 	let elementNames = [];
-	
 	for (const element of formOne.elements) {
 		elementNames.push(element.name);
 	}
@@ -180,11 +171,14 @@ document.querySelector(".b-10").onclick = makeTen;
 //- Внутри цикла получите значение каждой опции с помощью свойства value и добавьте его в optionsValues
 //- Выведите значения опций на страницу
 
+//доработать
 const paragraphEleven = document.getElementById('practicum11');
 
 function makeEleven() {
-	//Ваш код
-}
+	let form = document.forms[0];
+	let options = form.getElementsByTagName('option');
+	document.getElementById('practicum11').textContent = options.value;
+};
 
 document.querySelector('.b-11').onclick = makeEleven;
 
