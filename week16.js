@@ -71,15 +71,11 @@ btn.addEventListener('click', () => {
 //Подсказка: используйте коллекцию document.forms для получения формы по индексу и свойство form.elements.length для получения количества элементов в форме
 
 
-// let form3 = document.forms.formThree;
-// 	console.log(form3);
-// 	let elem = form3.elements
-// 	console.log(elem);
 
 document.querySelector('.b-5').addEventListener('click', function() {
 	let form3 = document.forms.formThree;
 	console.log(form3);
-	let elem = form3.elements
+	let elem = form3.elements.length;
 	console.log(elem);
   });
 
@@ -87,13 +83,12 @@ document.querySelector('.b-5').addEventListener('click', function() {
 //Найдите вторую форму на странице, используя document.forms и имя формы (которое вы знаете из задания 4)
 //Выведите на страницу количество элементов в форме, используя коллекцию form.elements
 
-const paragraphSix = document.getElementById('practicum6');
-
-function makeSix() {
-	//Ваш код
-}
-
-document.querySelector('.b-6').onclick = makeSix;
+document.querySelector('.b-6').addEventListener('click', function() {
+	let form2 = document.forms.formTwo;
+	console.log(form2);
+	let elem = form2.elements.length;
+	console.log(elem);
+  });
 
 //Задание 7
 //Выведите перечисление названий (name) всех элементов второй формы на экран. В задании 6 вы нашли их количество.
