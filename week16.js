@@ -101,13 +101,21 @@ document.querySelector('.b-6').addEventListener('click', function() {
 //- Внутри цикла добавьте текущее название элемента формы (свойство name) в elementsList, добавляя дефис перед названием
 //- После цикла выведите текст с перечислением элементов в элемент с id practicum7, используя свойство textContent
 
-const paragraphSeven = document.getElementById('practicum7');
+function printElementNames() {
+	let formTwo = document.forms.formTwo;
+	
+	let elementNames = [];
+	
+	for (const element of formTwo.elements) {
+		elementNames.push(element.name);
+	}
+	elementNames = elementNames.join('-');
+	  
+	document.getElementById('practicum7').textContent = elementNames;
+	};
 
-function makeSeven() {
-	//Ваш код
-}
+	document.querySelector('.b-7').onclick = printElementNames;
 
-document.querySelector('.b-7').onclick = makeSeven;
 
 //Задание 8
 //Выведите перечисление названий (name) всех элементов первой формы на экран. В задании 5 вы нашли их количество.
