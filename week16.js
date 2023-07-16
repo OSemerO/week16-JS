@@ -70,10 +70,9 @@ btn.addEventListener('click', () => {
 //Выведите на страницу количество элементов в форме, используя коллекцию form.elements
 //Подсказка: используйте коллекцию document.forms для получения формы по индексу и свойство form.elements.length для получения количества элементов в форме
 
-
+let form3 = document.forms.formThree;
 
 document.querySelector('.b-5').addEventListener('click', function() {
-	let form3 = document.forms.formThree;
 	console.log(form3);
 	let elem = form3.elements.length;
 	console.log(elem);
@@ -141,22 +140,35 @@ function elementNames1() {
 const paragraphNine = document.getElementById('practicum9');
 
 function makeNine() {
-	//Ваш код
-}
+	
+	let elementNames = [];
+	
+	for (const element of form3.elements) {
+		elementNames.push(element.name);
+	}
+	elementNames = elementNames.join(' -- ');
+	  
+	document.getElementById('practicum9').textContent = elementNames;
+};
 
 document.querySelector('.b-9').onclick = makeNine;
 
 //Задание 10
-//Выведите на экран значенеие radio кнопки четвёртой формы на странице
+//Выведите на экран значение radio кнопки четвёртой формы на странице
 //Подсказка: используйте коллекцию document.forms для доступа к формам, свойство elements для доступа к элементам формы и свойство value для получения значения radio кнопки
 
-const paragraphTen = document.getElementById('practicum10');
+
+const radioButtons = document.querySelectorAll('input[type="radio"]');
 
 function makeTen() {
-	//Ваш код
+  document.getElementById("practicum10").textContent = "";
+  radioButtons.forEach((radioButton) => {
+    radioButton.addEventListener("change", () => {
+      document.getElementById("practicum10").textContent += radioButton.value + " ";
+    });
+  });
 }
-
-document.querySelector('.b-10').onclick = makeTen;
+document.querySelector(".b-10").onclick = makeTen;
 
 //Задание 11
 //Выведите значения всех опций из первой формы
