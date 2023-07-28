@@ -171,16 +171,19 @@ document.querySelector(".b-10").onclick = makeTen;
 //- Внутри цикла получите значение каждой опции с помощью свойства value и добавьте его в optionsValues
 //- Выведите значения опций на страницу
 
-//доработать
+
+const form = document.forms['formOne'];
+const selectElement = form.elements.selectElement;
 const paragraphEleven = document.getElementById('practicum11');
 
 function makeEleven() {
-	let form = document.forms[0];
-	let options = form.getElementsByTagName('option');
-	document.getElementById('practicum11').textContent = options.value;
-};
-
-document.querySelector('.b-11').onclick = makeEleven;
+let optionsValues = '';
+for (let i = 0; i < selectElement.options.length; i++) {
+	optionsValues += selectElement.options[i].value;
+}
+document.getElementById('practicum11').innerHTML = optionsValues;
+}
+document.querySelector('.b-11').addEventListener('click', makeEleven);
 
 //Задание 12
 //Выведите значения атрибутов id всех чекбоксов (количество: 3) из второй формы
