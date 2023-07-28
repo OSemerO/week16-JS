@@ -172,7 +172,7 @@ document.querySelector(".b-10").onclick = makeTen;
 //- Выведите значения опций на страницу
 
 
-const form = document.forms['formOne'];
+const form = document.forms.formOne;
 const selectElement = form.elements.selectElement;
 const paragraphEleven = document.getElementById('practicum11');
 
@@ -195,7 +195,13 @@ document.querySelector('.b-11').addEventListener('click', makeEleven);
 const paragraphTwelve = document.getElementById('practicum12');
 
 function makeTwelve() {
-	//Ваш код
+	const form = document.forms.formTwo;
+
+	const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+
+for (const checkbox of checkboxes) {
+	document.getElementById('practicum12').textContent = checkbox.id;
+}
 }
 
 document.querySelector('.b-12').onclick = makeTwelve;
@@ -209,13 +215,23 @@ document.querySelector('.b-12').onclick = makeTwelve;
 //- Если кнопка выбрана, выведите сообщение "Кнопка выбрана" на страницу
 //- Если кнопка не выбрана, выведите сообщение "Кнопка не выбрана" на страницу
 
-const paragraphThirteen = document.getElementById('practicum13');
 
-function checkButton(e) {
-	//Ваш код
-}
+let form4 = document.forms.lastForm;
+let radioButton = form4.elements.fourthName;
 
-document.querySelector('.b-13').addEventListener('click', checkButton);
+form4.addEventListener('submit', function(event) {
+	event.preventDefault();
+      
+    let choice = form4.choice.value;
+      
+      if (choice === 'true') {
+        console.log('Выбрана кнопка');
+      } else { (choice === 'false') 
+        console.log('Не выбрана');
+	};
+};
+
+  
 
 //Задание 14
 //Проверьте какой вариант выбран в первой форме
@@ -451,4 +467,4 @@ function handleSubmit(event) {
 	const selectedOptions = Array.from(checkboxes).map((checkbox) => checkbox.labels[0].textContent);
 
 	//Ваш код
-}
+};
